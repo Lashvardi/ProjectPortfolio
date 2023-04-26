@@ -1,0 +1,23 @@
+@import '../../../styles/_variables.scss';
+
+.navbar_Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    height: 70px;
+    background-color: $darkBlue1;
+    box-shadow: 2px 11px 34px -3px rgba(142,163,178,0.76);
+
+    .right_side{
+        a{
+            margin-left: 20px;
+            color: $darkBlue5;
+
+            &:hover{
+                color: $darkBlue4;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@import "../../../styles/_variables.scss";
+.landing_container{
+    width: 100%;
+    height: 600px;
+    background-color:$darkBlue2;
+
+    .inner_container{
+        width: 80%;
+        height: 100%;
+        border: solid 1px red;
+    }
+
+    .left_side{
+        width: 50%;
+        height: 100%;
+        border: solid 1px blue;
+    }
+
+    .right_side{
+        width: 50%;
+        height: 100%;
+        border: solid 1px green;
+    }
+}
+
+#typewriter {
+    position: relative;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: monospace;
+    animation: blinker 1s step-end infinite;
+  }
+
+  .cursor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+  }
+  

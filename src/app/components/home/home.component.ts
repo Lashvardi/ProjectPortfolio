@@ -9,10 +9,10 @@ import { GetAllService } from 'src/app/services/get-all.service';
 })
 export class HomeComponent {
   portfolio : portfolio[] = [];
-  constructor(public getAllService: GetAllService) {
-    this.getAllService.GetInfo().subscribe((data) => {
-      console.log(data);
-      this.portfolio.push(data);
-    });
-  }
+  // constructor(public getAllService: GetAllService) {
+  //   this.getAllService.GetInfo().subscribe((data) => {
+  //     console.log(data);
+  //     this.portfolio.push(data);
+  //   });
+  // }
 }

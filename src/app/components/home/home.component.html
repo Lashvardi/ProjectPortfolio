@@ -13,13 +13,13 @@
 
   <h3>Projects</h3>
   <ul>
-    <li *ngFor="let project of portfolio[0].projects">
+    <li *ngFor="let project of portfolio[0].projects; let i = index">
       <h4>{{ project.name }}</h4>
       <p>{{ project.summary }}</p>
       <p>{{ project.description }}</p>
-      <p>
+
         <a href="{{ project.url }}">{{ project.url }}</a>
-      </p>
+        
       <p>Primary Language: {{ project.primaryLanguage }}</p>
       <p>Languages: {{ project.languages.join(", ") }}</p>
       <p>Libraries: {{ project.libraries.join(", ") }}</p>
@@ -27,6 +27,14 @@
         Github URL:
         <a href="{{ project.githubUrl }}">{{ project.githubUrl }}</a>
       </p>
+      <ul>
+        <li *ngFor="let image of project.images">
+          <img *ngIf="image" src="{{image.resolutions.thumbnail.url}}" alt="">
+          <img *ngIf="image" src="{{image.resolutions.desktop.url}}" alt="">
+          <img *ngIf="image" src="{{image.resolutions.micro.url}}" alt="">
+          <img *ngIf="image" src="{{image.resolutions.mobile.url}}" alt="">
+        </li>
+      </ul>
       <p>
         Repository URL:
         <a href="{{ project.repositoryUrl }}">{{ project.repositoryUrl }}</a>
