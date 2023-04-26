@@ -81,4 +81,22 @@
       </ul>
     </li>
   </ul>
+
+  <h3>Languages</h3>
+  <ul>
+    <li *ngFor="let language of portfolio[0].languages">
+      <ul>
+        <li>{{ language.language }} - {{ language.fluency }}</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Certificates</h3>
+  <ul>
+    <li *ngFor="let certificate of portfolio[0].certificates">
+      <ul>
+        <li>{{ certificate.name }} - <a target="_blank" href="{{ certificate.url }}">View Certificate</a></li>
+      </ul>
+    </li>
+  </ul>
 </div>
