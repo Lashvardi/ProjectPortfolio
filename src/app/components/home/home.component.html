@@ -1,1 +1,84 @@
-<p>home works!</p>
+<div *ngIf="portfolio">
+  <h1>{{ portfolio[0].basics.name }}</h1>
+  <h2>{{ portfolio[0].basics.label }}</h2>
+  <img [src]="portfolio[0].basics.image" alt="Profile Picture" />
+  <p>{{ portfolio[0].basics.summary }}</p>
+
+  <h3>Skills</h3>
+  <ul>
+    <li *ngFor="let skill of portfolio[0].skills">
+      {{ skill.name }} - {{ skill.level }}
+    </li>
+  </ul>
+
+  <h3>Projects</h3>
+  <ul>
+    <li *ngFor="let project of portfolio[0].projects">
+      <h4>{{ project.name }}</h4>
+      <p>{{ project.summary }}</p>
+      <p>{{ project.description }}</p>
+      <p>
+        <a href="{{ project.url }}">{{ project.url }}</a>
+      </p>
+      <p>Primary Language: {{ project.primaryLanguage }}</p>
+      <p>Languages: {{ project.languages.join(", ") }}</p>
+      <p>Libraries: {{ project.libraries.join(", ") }}</p>
+      <p>
+        Github URL:
+        <a href="{{ project.githubUrl }}">{{ project.githubUrl }}</a>
+      </p>
+      <p>
+        Repository URL:
+        <a href="{{ project.repositoryUrl }}">{{ project.repositoryUrl }}</a>
+      </p>
+      <ul>
+        <li *ngFor="let highlight of project.highlights">{{ highlight }}</li>
+      </ul>
+      <ul>
+        <li *ngFor="let keyword of project.keywords">{{ keyword }}</li>
+      </ul>
+      <ul>
+        <li *ngFor="let role of project.roles">{{ role }}</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Work Experience</h3>
+  <ul>
+    <li *ngFor="let work of portfolio[0].work">
+      <h4>{{ work.position }} @ {{ work.company }}</h4>
+      <p>{{ work.summary }}</p>
+      <p>{{ work.description }}</p>
+      <p>
+        <a href="{{ work.url }}">{{ work.url }}</a>
+      </p>
+      <p>Location: {{ work.location }}</p>
+      <p>Start Date: {{ work.startDate | date }}</p>
+      <p>End Date: {{ work.endDate | date }}</p>
+      <p>Is Current Role: {{ work.isCurrentRole }}</p>
+      <ul>
+        <li *ngFor="let highlight of work.highlights">{{ highlight }}</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Education</h3>
+  <ul>
+    <li *ngFor="let education of portfolio[0].education">
+      <h4>{{ education.area }} @ {{ education.institution }}</h4>
+      <p>{{ education.description }}</p>
+      <p>{{ education.activities }}</p>
+      <p>
+        <a href="{{ education.url }}">{{ education.url }}</a>
+      </p>
+      <p>Study Type: {{ education.studyType }}</p>
+      <p>Score: {{ education.score }}</p>
+      <p>Start Date: {{ education.startDate | date }}</p>
+      <p>End Date: {{ education.endDate | date }}</p>
+      <p>GPA: {{ education.gpa }}</p>
+      <ul>
+        <li *ngFor="let course of education.courses">{{ course }}</li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { portfolio } from 'src/app/models/portfolio';
 import { GetAllService } from 'src/app/services/get-all.service';
 
 @Component({
@@ -7,9 +8,11 @@ import { GetAllService } from 'src/app/services/get-all.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
-  
-  constructor(public GetAllService: GetAllService) {
-    this.GetAllService.GetInfo();
+  portfolio : portfolio[] = [];
+  constructor(public getAllService: GetAllService) {
+    this.getAllService.GetInfo().subscribe((data) => {
+      console.log(data);
+      this.portfolio.push(data);
+    });
   }
 }
